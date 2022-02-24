@@ -1,4 +1,4 @@
-type MyAwaited<T extends Promise<any>> =
-  T extends Promise<infer U>
-    ? U extends Promise<any> ? MyAwaited<U> : U
+type MyAwaited<T extends Promise<unknown>> =
+  T extends Promise<infer ExampleType>
+    ? ExampleType extends Promise<unknown> ? MyAwaited<ExampleType> : ExampleType
     : never
